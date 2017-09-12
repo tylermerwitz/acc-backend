@@ -67,7 +67,7 @@ function polyPrint ( a ) {
         if ( coeff === 0 ) {
             // skip zero-valued terms
             continue;
-        } else if ( coeff !== 1 ) {
+        } else if ( coeff !== 1 || degree === 0 ) {
             // don't print extraneous identity coefficient one
             term += coeff;
         }
