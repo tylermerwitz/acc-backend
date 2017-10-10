@@ -22,7 +22,7 @@ module.exports = function Player ( initBalance, strategy ) {
     // Default strategy: always pick one Marble.
     if ( typeof strategy !== 'function' ) {
         strategy = function ( hat, pickedMarbles ) {
-            return pickedMarbles.length < 2;
+            return pickedMarbles.length === 0;
         };
     }
 
