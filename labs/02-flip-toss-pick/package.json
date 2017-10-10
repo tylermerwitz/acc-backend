@@ -1,0 +1,16 @@
+{
+  "name": "02-flip-toss-pick",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "mocha": "^3.5.3",
+    "should": "^13.0.1"
+  }
+}
