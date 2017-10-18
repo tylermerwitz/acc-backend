@@ -14,6 +14,10 @@ module.exports = function Student ( school, id, name, instructor ) {
         return instructor;
     };
 
+    /*
+        Return a list of Students enrolled in this course.
+    */
+
     this.getStudents = function () {
         return school.getAllStudents().filter( ( student ) => {
             return school.isEnrolled( student.getId(), id );
