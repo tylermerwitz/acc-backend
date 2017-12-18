@@ -7,9 +7,12 @@
  * @returns {Number} The number maximum value.
 */
 function max2 ( a, b ) {
-    /*
-        YOUR CODE HERE
-    */
+    if a > b
+        return a;
+    else if b > a;
+        return b;
+    else
+        return 'The values are equal';
 }
 
 /*
@@ -19,9 +22,12 @@ function max2 ( a, b ) {
  * @returns {Number} The minimum value.
 */
 function min2 ( a, b ) {
-    /*
-        YOUR CODE HERE
-    */
+    if a > b
+        return b
+    else if b > a;
+        return a
+    else
+        return 'The values are equal';
 }
 
 /*
@@ -31,11 +37,10 @@ function min2 ( a, b ) {
  * @returns {Number} The number of days in the month.
 */
 function max3 ( a, b, c ) {
-    // hint: could max2 be useful here?
-
-    /*
-        YOUR CODE HERE
-    */
+    let x = max2(a,b);
+    if (typeof x === "string")
+        x = a;
+    return max2(x,c);
 }
 
 /*
@@ -45,11 +50,10 @@ function max3 ( a, b, c ) {
  * @returns {Number} The number of days in the month.
 */
 function min3 ( a, b, c ) {
-    // hint: could min2 be useful here?
-
-    /*
-        YOUR CODE HERE
-    */
+    let x = min2(a,b);
+    if (typeof x === "string")
+        x = a;
+    return min2(x,c);
 }
 
 module.exports = {
