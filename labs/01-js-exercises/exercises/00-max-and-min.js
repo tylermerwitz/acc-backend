@@ -7,9 +7,9 @@
  * @returns {Number} The number maximum value.
 */
 function max2 ( a, b ) {
-    if a > b
+    if (a > b)
         return a;
-    else if b > a;
+    else if (b > a)
         return b;
     else
         return 'The values are equal';
@@ -22,10 +22,10 @@ function max2 ( a, b ) {
  * @returns {Number} The minimum value.
 */
 function min2 ( a, b ) {
-    if a > b
-        return b
-    else if b > a;
-        return a
+    if (a > b)
+        return b;
+    else if (b > a)
+        return a;
     else
         return 'The values are equal';
 }
