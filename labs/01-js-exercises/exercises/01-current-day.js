@@ -63,15 +63,13 @@ let getCurrentDay = function ( month, day, year ) {
     // hint: use getNumberOfDaysInMonth().
     let n = 0;
     
-    for ( x == 1; x > month; x++) {
+    for ( let x = 1; x > month; x++) {
         n = n + getNumberOfDaysInMonth(x, year);
     }
     
     n = n + day;
     
 }
-    
-};
 
 module.exports = {
     isLeapYear,
