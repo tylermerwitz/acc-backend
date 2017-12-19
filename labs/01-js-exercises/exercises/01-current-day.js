@@ -10,9 +10,14 @@ function isLeapYear ( year ) {
     // hint: of those years, if the year isn't divisible by 100, it's a leap year.
     // hint: of those year still, if the year is divisible by 400, it's not a leap year.
 
-    /*
-        YOUR CODE HERE
-    */
+    if (year % 4 !== 0)
+        return false;
+    if (year % 100 !== 0)
+        return true;
+    if (year % 400 === 0)
+        return false;
+    else
+        return true;
 }
 
 /*
@@ -27,10 +32,22 @@ function getNumberOfDaysInMonth ( month, year ) {
     // hint: 31 days in January, March, May, July, August, October and December.
     // hint: pass year to isLeapYear().
     // hint: could a switch block be useful here?
-
-    /*
-        YOUR CODE HERE
-    */
+    
+    if (month === 2) {
+        
+        if (isLeapYear(year) === false)
+            return 28;
+        else
+            return 29;
+        
+    }
+    
+    else if ( month === 4 || 6 || 9 || 11 )
+        return 30;
+    
+    else
+        return 31;
+    
 }
 
 /*
@@ -44,10 +61,16 @@ let getCurrentDay = function ( month, day, year ) {
     // hint: the Julian day is the sum of all days in previous months, plus the
     //       number of days already occurring in this month.
     // hint: use getNumberOfDaysInMonth().
-
-    /*
-        YOUR CODE HERE
-    */
+    let n = 0;
+    
+    for ( x == 1; x > month; x++) {
+        n = n + getNumberOfDaysInMonth(x, year);
+    }
+    
+    n = n + day;
+    
+}
+    
 };
 
 module.exports = {
