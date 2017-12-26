@@ -73,9 +73,27 @@ function makeChange ( changeAmount ) {
     //       make sure to check for the existence and optionally initialize
     //       object members.
 
-    /*
-        YOUR CODE HERE
-    */
+    let amount = changeAmount.toFixed(2);
+    let denoms = getAllDenominations();
+    let change = {};
+    let currentDenom = denoms[(denoms.length)-1];
+    let n = 1;
+    
+    while (amount > 0) {
+        
+        if ( (amount - currentDenom.value) > 0) {
+            change.(currentDenom.name) = n;
+            n++;
+            amount = amount - currentDenom.value;            
+        }
+        else {
+            denoms.pop();
+            currentDenom = denoms[(denoms.length)-1];
+            n = 1;
+        }
+        
+    }
+    
 }
 
 module.exports = {
