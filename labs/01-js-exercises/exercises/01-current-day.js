@@ -15,9 +15,9 @@ function isLeapYear ( year ) {
     if (year % 100 !== 0)
         return true;
     if (year % 400 === 0)
-        return false;
-    else
         return true;
+    else
+        return false;
 }
 
 /*
@@ -68,6 +68,8 @@ let getCurrentDay = function ( month, day, year ) {
     }
     
     n = n + day;
+    
+    return n;
     
 }
 
