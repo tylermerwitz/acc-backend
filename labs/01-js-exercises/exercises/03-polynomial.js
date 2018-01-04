@@ -25,10 +25,24 @@ let util = require( 'util' );
 function polyAdd ( a, b ) {
     // hint: it's much easier to manipulate polynomials when their sizes are
     //       guaranteed to be equal. can you enforce that?
+    
+    let c = [];
 
-    /*
-        YOUR CODE HERE
-    */
+    while (a.length < b.length) {
+        a.unshift(0);
+    }
+    
+    while (b.length < a.length) {
+        b.unshift(0);
+    }
+    
+    for ( let i = 0; i < a.length; i++ ) {
+        
+        c.push(a[i]+b[i]);
+        
+    }
+    
+    return c;
 }
 
 /*
@@ -47,9 +61,34 @@ function polyMul ( a, b ) {
     //       working on, either reverse both arrays or compute it from their
     //       lengths.
 
-    /*
-        YOUR CODE HERE
-    */
+    let c = [];
+    let x = {value: 0, power: 0};
+
+    while (a.length < b.length) {
+        a.unshift(0);
+    }
+    
+    while (b.length < a.length) {
+        b.unshift(0);
+    }
+    
+    a.reverse();
+    b.reverse();
+    
+    for ( let i = 0; i < a.length; i++ ){
+        
+        if (a[i] !== 0) {
+            
+            for (let j = 0; j < b.length; j++) {
+                
+                if (b[j] !== 0) {
+                    x.value = a[i] * b]j];
+                    x.power = i + j;
+                }
+            }
+        }
+        
+    }
 }
 
 /*
