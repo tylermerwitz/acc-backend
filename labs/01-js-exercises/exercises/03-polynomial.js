@@ -61,8 +61,8 @@ function polyMul ( a, b ) {
     //       working on, either reverse both arrays or compute it from their
     //       lengths.
 
-    let c = [];
-    let x = {value: 0, power: 0};
+    let c, d = [];
+    let value, power, start = 0;
 
     while (a.length < b.length) {
         a.unshift(0);
@@ -71,24 +71,77 @@ function polyMul ( a, b ) {
     while (b.length < a.length) {
         b.unshift(0);
     }
+	
+	/*For optimization purposes, I'm going to see if b[] only has one value in
+		its array. If it does, I'll swap a[] and b[]. Later code will reveal that if
+		a[] only had one stored value in it, the array of polynomials (d[]) should
+		only have a single element in it, and therefore that element can be
+		returned as the result rather than having to add all the elements in d[]*/
+	
+	let count = 0;
+	
+	for (let i = 0; i < b.length; i++) {
+		
+		if (b[i] !== 0) {
+			count++;
+			if (count > 1)
+				i = b.length;
+		}
+	}
+	
+	if (count < 2) {
+		let revA = b.reverse();
+		let revB = a.reverse();
+	}
+	
+	else {
+		let revA = a.reverse();
+		let revB = b.reverse();
+	}
     
-    a.reverse();
-    b.reverse();
-    
-    for ( let i = 0; i < a.length; i++ ){
+    for ( let i = 0; i < revA.length; i++ ){
         
-        if (a[i] !== 0) {
+        if (revA[i] !== 0) {
             
-            for (let j = 0; j < b.length; j++) {
+            c = [];
+            
+            for (let j = 0; j < revB.length; j++) {
                 
-                if (b[j] !== 0) {
-                    x.value = a[i] * b]j];
-                    x.power = i + j;
+                if (revB[j] !== 0) {
+                    value = revA[i] * revB[j];
+                    start = power + 1;
+                    power = i + j;
+                    
+                    if (power === 0) 
+                        c.push(value);
+                    else {
+                        c.fill[0, start, power];
+                        c[power] = value;
+                    }
                 }
             }
+			
+			c.reverse();
+			d.push(c);
+			
         }
         
     }
+	
+	if (d.length === 1)
+		return d[0];
+	else {
+		let result = [];
+		
+		d.forEach(function(item) {
+			result = polyAdd(result, item);
+		});
+		
+		return result;
+
+	}
+	
+	
 }
 
 /*
