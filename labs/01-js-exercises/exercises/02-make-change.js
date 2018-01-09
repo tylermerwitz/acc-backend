@@ -82,13 +82,13 @@ function makeChange ( changeAmount ) {
     while (amount > 0) {
         
         if ( (amount - currentDenom.value) > 0) {
-            change.(currentDenom.name) = n;
+            change.currentDenom.name = n;
             n++;
             amount = amount - currentDenom.value;            
         }
         else {
             denoms.pop();
-            currentDenom = denoms[(denoms.length)-1];
+            currentDenom = denoms[denoms.length-1];
             n = 1;
         }
         
