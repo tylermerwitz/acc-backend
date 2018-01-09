@@ -33,20 +33,28 @@ function getNumberOfDaysInMonth ( month, year ) {
     // hint: pass year to isLeapYear().
     // hint: could a switch block be useful here?
     
-    if (month === 2) {
-        
-        if (isLeapYear(year) === false)
-            return 28;
-        else
-            return 29;
-        
+    switch (month) {
+        case 2:
+            if (isLeapYear(year) === false)
+                return 28;
+            else
+                return 29;
+        break;
+        case 9:
+            return 30;
+            break;
+        case 4:
+            return 30;
+            break;
+        case 6:
+            return 30;
+            break;
+        case 11:
+            return 30;
+            break;
+        default:
+            return 31;        
     }
-    
-    else if ( month === 4 || 6 || 9 || 11 )
-        return 30;
-    
-    else
-        return 31;
     
 }
 
