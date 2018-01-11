@@ -89,14 +89,17 @@ function polyMul ( a, b ) {
 		}
 	}
 	
+	let revA = [];
+	let revB = [];
+	
 	if (count < 2) {
-		let revA = b.reverse();
-		let revB = a.reverse();
+		revA = b.reverse();
+		revB = a.reverse();
 	}
 	
 	else {
-		let revA = a.reverse();
-		let revB = b.reverse();
+		revA = a.reverse();
+		revB = b.reverse();
 	}
     
     for ( let i = 0; i < revA.length; i++ ){
